@@ -85,6 +85,17 @@
 		});
 	};
 
+	Controller.prototype.deleteItem = function (title) {
+		var that = this;
+
+		if(title.trim() === ''){return}
+
+		that.model.delete(title, function (){
+			that.view.render('ClearNewTodo');
+			that._filter(true);
+		});
+	};
+
 	/**
 	 * Give it an ID of a model and a checkbox and it will update the item
 	 * in storage based on the checkbox's state.

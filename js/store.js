@@ -113,6 +113,8 @@
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
 	};
 
+	
+
 	// Export to window
 	window.app = window.app || {};
 	window.app.Store = Store;
